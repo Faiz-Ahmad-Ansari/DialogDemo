@@ -1,0 +1,195 @@
+/* App Container Styles - Only affects the demo buttons */
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    min-height: 90vh;
+    padding: 2rem;
+    background: #f8f9fa;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  .app h1 {
+    font-size: 2.75rem;
+    margin-bottom: 2.5rem;
+    color: #1a1a1a;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    position: relative;
+  }
+  
+  /* .app h1::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #4361ee;
+    border-radius: 2px;
+  }
+   */
+  /* Specific selector for ONLY the demo buttons container */
+  .app > div:first-of-type {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 800px;
+  }
+  
+  /* Specific selector for ONLY the demo buttons */
+  .app > div:first-of-type > button {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    min-width: 180px;
+  }
+  
+  /* Color themes for demo buttons only */
+  .app > div:first-of-type > button:nth-child(1) {
+    background: #4361ee;
+    color: white;
+  }
+  
+  .app > div:first-of-type > button:nth-child(2) {
+    background: #3a0ca3;
+    color: white;
+  }
+  
+  .app > div:first-of-type > button:nth-child(3) {
+    background: #7209b7;
+    color: white;
+  }
+  
+  /* Hover effects for demo buttons only */
+  .app > div:first-of-type > button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  }
+  
+  /* Ripple effect for demo buttons only */
+  .app > div:first-of-type > button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+  }
+  
+  .app > div:first-of-type > button:focus:not(:active)::after {
+    animation: ripple 0.6s ease-out;
+  }
+  
+  @keyframes ripple {
+    0% {
+      transform: scale(0, 0);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(20, 20);
+      opacity: 0;
+    }
+  }
+  
+  /* Responsive design for demo buttons only */
+  @media (max-width: 600px) {
+    .app > div:first-of-type {
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+    }
+    
+    .app > div:first-of-type > button {
+      width: 100%;
+    }
+  }
+
+  /* Input Field Styling */
+.dialog-content input[type="text"] {
+    width: 92%;
+    padding: 8px 16px;
+    margin-top: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: #333;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-color: #f8f9fa;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  
+  /* Input Focus State */
+  .dialog-content input[type="text"]:focus {
+    outline: none;
+    border-color: #4361ee;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+    background-color: white;
+  }
+  
+  /* Input Placeholder */
+  .dialog-content input[type="text"]::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  /* Input Hover State */
+  .dialog-content input[type="text"]:hover {
+    border-color: #b3b3b3;
+  }
+  
+  /* Input Animation */
+  .dialog-content input[type="text"] {
+    animation: inputEntrance 0.4s ease-out;
+  }
+  
+  @keyframes inputEntrance {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Floating Label Effect (Optional) */
+  .dialog-content .input-container {
+    position: relative;
+    margin-top: 24px;
+  }
+  
+  .dialog-content .input-container label {
+    position: absolute;
+    top: -18px;
+    left: 10px;
+    font-size: 0.85rem;
+    color: #4361ee;
+    background: white;
+    padding: 0 5px;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .dialog-content input[type="text"]:focus + label,
+  .dialog-content input[type="text"]:not(:placeholder-shown) + label {
+    opacity: 1;
+    transform: translateY(0);
+  }
