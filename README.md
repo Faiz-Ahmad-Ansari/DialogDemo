@@ -35,13 +35,13 @@
 
 A reusable, modular React dialog window composed of 7 subcomponents:
 
-- **Button**
-- **ButtonGroup**
-- **IconAndText**
-- **Header**
-- **Content**
-- **Footer**
-- **Dialog** (main wrapper)
+- **Button**  
+- **ButtonGroup**  
+- **IconAndText**  
+- **Header**  
+- **Content**  
+- **Footer**  
+- **Dialog** (main wrapper)  
 
 Features include flexible composition, variable buttons in header/footer, optional footer info, and static center positioning.  
 
@@ -50,3 +50,24 @@ The demo app demonstrates basic, info, and complex dialogs with various configur
 ## Usage
 
 Control the dialog visibility with React state and pass appropriate props for header, content, and footer.
+
+---
+
+## Test Cases Summary
+
+Here are the unit test coverage highlights for all components using Testing Library and Vitest:
+
+| Component      | Tested Aspects                                     |
+| -------------- | ------------------------------------------------- |
+| **Button**     | Renders children, handles `onClick`, passes extra props |
+| **ButtonGroup**| Wraps children inside a div with `button-group` class |
+| **IconAndText**| Renders text and optionally icon elements         |
+| **Header**     | Renders title, icon, and a variable number of buttons |
+| **Content**    | Renders children inside content container          |
+| **Footer**     | Renders optional info and variable buttons          |
+| **Dialog**     | Conditionally renders based on `isOpen`, composes header, content, footer |
+
+These tests ensure component behavior, rendering logic, and composition integrity, making the dialog system robust and maintainable.
+
+---
+

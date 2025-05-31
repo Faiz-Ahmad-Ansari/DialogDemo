@@ -53,7 +53,7 @@ const App = () => {
           title: "Information",
           icon: "ℹ️",
           buttons: [
-            <Button key="min" onClick={() => console.log('Minimize')}>_</Button>,
+            <Button key="min" onClick={() => alert('Minimize')}>_</Button>,
             <Button key="close" onClick={() => setDialog2Open(false)}>X</Button>
           ]
         }}
@@ -75,8 +75,8 @@ const App = () => {
           title: "Complex Dialog",
           icon: "⚠️",
           buttons: [
-            <Button key="help" onClick={() => console.log('Help')}>?</Button>,
-            <Button key="settings" onClick={() => console.log('Settings')}>!!</Button>,
+            <Button key="help" onClick={() => alert('Help')}>?</Button>,
+            <Button key="settings" onClick={() => alert('Settings')}>!!</Button>,
             <Button key="close" onClick={() => setDialog3Open(false)}>X</Button>
           ]
         }}
@@ -97,8 +97,8 @@ const App = () => {
         footer={{
           info: "Please review your changes before submitting",
           buttons: [
-            <Button key="back" onClick={() => console.log('Back')}>Back</Button>,
-            <Button key="next" onClick={() => console.log('Next')}>Next</Button>,
+            <Button key="back" onClick={() => alert('You Can Add Back Functionality Here')}>Back</Button>,
+            <Button key="next" onClick={() => alert('You Can Add Next Functionality Here')}>Next</Button>,
             <Button key="skip" onClick={() => setDialog3Open(false)}>Skip</Button>,
             <Button key="submit" onClick={() => setDialog3Open(false)}>Submit</Button>
           ]

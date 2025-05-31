@@ -1,13 +1,18 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import IconAndText from './IconAndText';
 
-test('renders text with icon', () => {
-  render(<IconAndText icon="🔥" text="Hot" />);
-  expect(screen.getByText('🔥')).toBeInTheDocument();
-  expect(screen.getByText('Hot')).toBeInTheDocument();
-});
+describe('IconAndText', () => {
+  it('renders text and icon', () => {
+    const { getByText, getByTestId } = render(
+      <IconAndText icon={<span data-testid="icon">🔥</span>} text="Hot" />
+    );
+    expect(getByText('Hot')).toBeInTheDocument();
+    expect(getByTestId('icon')).toBeInTheDocument();
+  });
 
-test('renders text without icon', () => {
-  render(<IconAndText text="Only Text" />);
-  expect(screen.getByText('Only Text')).toBeInTheDocument();
+  it('renders text only if icon is not provided', () => {
+    const { queryByTestId, getByText } = render(<IconAndText text="Text Only" />);
+    expect(getByText('Text Only')).toBeInTheDocument();
+    expect(queryByTestId('icon')).not.toBeInTheDocument();
+  });
 });
